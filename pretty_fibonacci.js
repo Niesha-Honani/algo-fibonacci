@@ -1,18 +1,19 @@
 function fibonacci(num){
-    const fib_nums = [0,1]
-    let fibonacci = 0
-    if(num ===0 || num === 1){
-        return fib_nums[num]
-    }
+    let fib1 = 0
+    let fib2=1
+    let fib = 0
+
+    if(num <=1) return num;
 
     for(let i = 2; i <= num; i++){
-        fibonacci = fib_nums[0] + fib_nums[1]
-        fib_nums[0] = fib_nums[1]
-        fib_nums[1] = fibonacci
+        fib = fib1 + fib2
+        fib1 = fib2
+        fib2 = fib
     }
-    return fibonacci
+    return fib
 }
 console.log(fibonacci(0))
+console.log(fibonacci(1))
 console.log(fibonacci(2))
 console.log(fibonacci(5))
 console.log(fibonacci(8))
